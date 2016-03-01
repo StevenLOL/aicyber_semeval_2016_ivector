@@ -7,7 +7,7 @@ This task is sentiment analysis in tweeets. It focused on classifying tweets int
 
 ##Two system will be included:
 
-###1) system based bag-of-ngram
+###1) system based on bag-of-ngram
 
 ###2) system based on i-vector
 
