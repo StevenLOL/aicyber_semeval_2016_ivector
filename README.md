@@ -1,4 +1,4 @@
-# aicyber_semeval_2016_ivector [WIP]
+# aicyber_semeval_2016_vector [WIP]
 
 This repository will contain the aicyber's system for SemEval 2016 Task 4A.
 
