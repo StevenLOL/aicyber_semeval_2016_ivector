@@ -9,5 +9,5 @@ This task is sentiment analysis in tweeets. It focused on classifying tweets int
 
 ###1) system based on bag-of-ngram
 
-###2) system based on i-vector
+###2) system based on vector
 
