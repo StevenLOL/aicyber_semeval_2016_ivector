@@ -27,7 +27,7 @@ testx=[s[1:-1] for s in testx]
 pool=Pool(processes=3)
 trainx=pool.map(imdb_bag_of_word_libs.processLine, trainx)
 
-testx=pool.map(imdb_bag_of_word_libs.processLine, testx)
+#testx=pool.map(imdb_bag_of_word_libs.processLine, testx)
 
 unlabeled=pool.map(imdb_bag_of_word_libs.processLine, unlabeled)
 
@@ -40,7 +40,7 @@ print type(trainx),type(trainx[0]),trainx[0]
 
 def saveTrainUnlabed():
     unlabeled.extend(trainx)
-    with codecs.open(configure.KAGLE_FILE_LINE_SENTANCE,'w',encoding='utf-8') as fout:
+    with codecs.open(configure.KAGLE_FILE_ALL_LINE_SENTANCE,'w',encoding='utf-8') as fout:
         for line in unlabeled:
             fout.write(u' '.join(line).strip()+u'\n')
 

@@ -81,4 +81,9 @@ system/log/log.txt
 *.pyc
 *.err
 *.scored
+System_2/tempfolder/train_LINE_SENTANCE
+System_2/tempfolder/trainAndUnalbed
+System_2/tempfolder/*
+System_2/data
+System_2/exp
 
