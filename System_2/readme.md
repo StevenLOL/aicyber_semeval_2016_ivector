@@ -25,6 +25,6 @@ The covnerted data will be stored in data folder
 train unlabeled of imdb
 ##Extract i-vectors
 ###Data used:
-all data wich suit the supersed training
+all data which suit the supervised training
 
 
