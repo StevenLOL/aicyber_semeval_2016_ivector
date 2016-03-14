@@ -1,0 +1,52 @@
+FILE_LINE_SENTANCE='./data/2016_aicyber_wiki_weibo_douban_words_l5.txt'
+W2V_OUTPUT_MODEL='./data/w2v/w2v_wiki_weibo_douban_20.bin'
+TRAIN_SET='./data/douban_c5.train.txt'
+EVAL_SET='./data/douban_c5.eval.txt'
+KAGLE_BOW_DATA_FOLD='./downloads/imdb_org'
+KAGLE_FILE_LINE_SENTANCE='./downloads/trainAndUnalbed'
+KAGLE_FILE_TRAIN_W2V_LINE_SENTANCE= './downloads/train_LINE_SENTANCE'
+KAGLE_FILE_TRAIN_IVECTOR_LINE_SENTANCE='./downloads/trainAndUnalbed_imdb'
+KAGLE_W2V_MODEL='./downloads/trainAndUnalbed.w2v.20.bin'
+SEMEVAL_TRAIN='./semeval2016/100_topics_100_tweets.sentence-three-point.subtask-A.train.gold.txt.full'
+SEMEVAL_DEV='./semeval2016/100_topics_100_tweets.sentence-three-point.subtask-A.dev.gold.txt.full'
+SEMEVAL_DEV_TEST='./semeval2016/100_topics_100_tweets.sentence-three-point.subtask-A.devtest.gold.txt.full'
+SEMEVAL_TRAIN_FILE_LINE_SENTANCE='./downloads/semeval.train.2016.txt'
+SEMEVAL_DEV_FILE_LINE_SENTANCE='./downloads/semeval.dev,2016.txt'
+SEMEVAL_DEV_TEST_FILE_LINE_SENTANCE='./downloads/semeval.dev.test.2016.txt'
+TWEET_STANDFORD_FILE_LINE_SENTANCE='./downloads/trainAndUnalbed_stand_ford'
+
+
+
+SCORE_SCRIPT='./semeval2016/score-semeval2016-task4-subtaskA.pl'
+SCORE_REF_DEV='./semeval2016/100_topics_100_tweets.sentence-three-point.subtask-A.dev.gold.txt.full'
+SCORE_REF_DEVTEST='./semeval2016/100_topics_100_tweets.sentence-three-point.subtask-A.devtest.gold.txt.full'
+
+
+def loadFeatsText(fname):
+    rvvalues=[]
+    fdata=open(fname).read()
+    fdata=fdata.replace('[\n','[').replace('[ \n','[')
+    fdata=fdata.split('\n')
+    fdata=[s.replace('[','').replace(']','').replace('  ',' ').replace('  ',' ').strip() for s in fdata if len(s)>10 and '_22 ' not in s ]
+    print fdata[0]
+    rvids=[s.split()[0] for s in fdata]
+    values=[map(float,s.split()[1:]) for s in fdata]
+    return rvids,values
+
+def kaldiID_2_LB(idlist):
+    rv=[]
+    for id in idlist:
+
+        v=id.split('_')[1]
+        rv.append(v)
+        '''
+        if v in ['1','2','3']:
+            rv.append(0)
+        elif v=='5':
+            rv.append(1)
+        else:
+            print id, 'Error'
+        '''
+    return rv
+
+

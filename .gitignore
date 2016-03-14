@@ -80,4 +80,5 @@ target/
 system/log/log.txt
 *.pyc
 *.err
+*.scored
 
