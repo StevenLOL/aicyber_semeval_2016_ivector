@@ -1,9 +1,14 @@
-#i-vector framework for NLP
+# 1 i-vector framework for NLP
 
-i-vector system is trained on training+unlabeled imdb data, it is then evaluated on the IMDB as well as SemEval2016 tweets.
+i-vectors often seen in Speaker verification domain. It projects variable length speech utterances into a fixed-size low-
+dimensional vector, namely i-vector. (More info on i-vector can be found in [Front-End Factor Analysis for Speaker Verification](https://www.researchgate.net/profile/Pierre_Dumouchel/publication/224166071_Front-End_Factor_Analysis_for_Speaker_Verification/links/0deec5176777115c24000000.pdf) )
 
-#Steps to build the system
+This study propose use i-vector to model sentances. 
 
+Training of i-vector system is in a completely unsupervised manner, it includes training of word2vec and training of i-vector extractor. Evaluation is done on IMDB similar and SemEval 2016 Task4A.
+
+
+# 2 Steps to build the system
 ##Check [prerequistes](./prerequisites.md)
 
 ##Train Gensim W2V model
