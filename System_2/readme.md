@@ -9,10 +9,10 @@ Training of i-vector system is in a completely unsupervised manner, it includes 
 
 
 # 2 Steps to build the system
-##Check [prerequistes](./prerequisites.md)
+## 2.1 Check [prerequistes](./prerequisites.md)
 
-##Train Gensim W2V model
-###Data used:
+## 2.2 Train Gensim W2V model
+###2.2.1 Data used:
 train unlabeled of imdb
 Training of a word to vector model by using Gensim.
 ####0000
@@ -23,7 +23,7 @@ python 0000_imdb_data_2_line_sentances.py
 ~~~
 This will produce the merged labeled train+unlabled training data, which should contain 75000 movie reviews.
 
-These two files will convert , the test and all SemEval data to list of tokens.
+These two files will convert the test and all SemEval data to list of tokens.
 ~~~
 0001_imdb_test_2_line_sentances.py
 0002_semeval2016_tweet_2_line_sentance.py
@@ -45,8 +45,8 @@ This will train w2v based on data in 0000 , with following setup:
 
 Output model is ./tempfolder/trainAndUnalbed.w2v.20.bin
 
-##Convert text data to kaldi format
-We already have all the data in list of tokens format, so we can use w2v to convert list of tokens into list of vectors.
+## 2.3 Convert text data to kaldi format
+We already have all the data in list of tokens format, so we can use w2v to convert them into list of vectors.
 
 ~~~
 python 0020_w2v_to_kaldi.py
@@ -58,11 +58,11 @@ This process including converting training data, unlabeled and test data of imdb
 ##
 
 
-The covnerted data will be stored in data folder and follow Kaldi's specification,[More on Kaldi data format](https://github.com/StevenLOL/Research_speech_speaker_verification_nist_sre2010/blob/master/doc/help_kaldi.md)..
+The covnerted data will be stored in **data** folder and follow Kaldi's specification,[More on Kaldi data format](https://github.com/StevenLOL/Research_speech_speaker_verification_nist_sre2010/blob/master/doc/help_kaldi.md)..
 
 This process will take time to completed.
 
-In each folder there will be on w2vFeatures.ark and W2vFeatures.ark.mean
+In each folder there will be one w2vFeatures.ark and W2vFeatures.ark.mean
 
 The w2vFeatures.ark is list of word vectors of sentences.
 
