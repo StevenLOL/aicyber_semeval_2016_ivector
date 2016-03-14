@@ -37,9 +37,21 @@ copy-feats
 Something will print out rather than "copy-feats: command not found"
 
 ##scikit-learn
+For classifer training
 ~~~
 pip install scikit-learn
 ~~~
+##tweetokenize
+
+Tokenization and pre-processing for Twitter data
+
+###Clone:
+https://github.com/StevenLOL/tweetokenize.git
+###And install
+~~~
+python setup.py install
+~~~
+
 
 
 
