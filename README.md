@@ -7,7 +7,7 @@ This task is sentiment analysis in tweeets. It focused on classifying tweets int
 
 ##Two system will be included:
 
-###1) system based on vector space model
+###1) [system based on vector space model](./System_1)
 
-###2) system based on i-vector
+###2) [system based on i-vector](./System_2)
 
