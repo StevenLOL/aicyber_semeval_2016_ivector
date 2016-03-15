@@ -9,6 +9,7 @@ import sklearn
 import configure
 import time
 import semeval2016_libs
+import imdb_bag_of_word_libs
 import numpy as np
 ts=time.time()
 
@@ -18,13 +19,13 @@ train='./exp/ivectors_semeval_train_NGMM_2048_W_2_DIM_200/feats.txt'
 
 
 
-trainy,trainx=configure.loadFeatsText(train)
-trainy=configure.kaldiID_2_LB(trainy)
-evaly,evalx=configure.loadFeatsText(dev)
-evaly=configure.kaldiID_2_LB(evaly)
+trainy,trainx=imdb_bag_of_word_libs.loadFeatsText(train)
+trainy=imdb_bag_of_word_libs.kaldiID_2_LB(trainy)
+evaly,evalx=imdb_bag_of_word_libs.loadFeatsText(dev)
+evaly=imdb_bag_of_word_libs.kaldiID_2_LB(evaly)
 
-evaly2,evalx2=configure.loadFeatsText(devtest)
-evaly2=configure.kaldiID_2_LB(evaly2)
+evaly2,evalx2=imdb_bag_of_word_libs.loadFeatsText(devtest)
+evaly2=imdb_bag_of_word_libs.kaldiID_2_LB(evaly2)
 
 
 robust_scaler = RobustScaler()

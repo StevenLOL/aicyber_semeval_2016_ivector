@@ -8,11 +8,11 @@ import imdb_bag_of_word_libs
 ts=time.time()
 
 outputfile='./tempfolder/results_w2v_mean.csv'
-y,x=configure.loadFeatsText('./exp/ivectors_imdb_train_NGMM_2048_W_2_DIM_200/feats.txt')
+y,x=imdb_bag_of_word_libs.loadFeatsText('./exp/ivectors_imdb_train_NGMM_2048_W_2_DIM_200/feats.txt')
 
 print y[0],len(x[0]),x[0]
 
-testy,testx=configure.loadFeatsText('./exp/ivectors_imdb_test_NGMM_2048_W_2_DIM_200/feats.txt')
+testy,testx=imdb_bag_of_word_libs.loadFeatsText('./exp/ivectors_imdb_test_NGMM_2048_W_2_DIM_200/feats.txt')
 
 print 'done in',time.time()-ts,len(x),len(y)
 

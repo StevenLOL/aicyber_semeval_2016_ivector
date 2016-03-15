@@ -9,7 +9,7 @@ import os
 #x=loadData(configure.KAGLE_BOW_DATA_FOLD+'/')
 def loadUnlabedData():
 
-    test = pd.read_csv(configure.KAGLE_FILE_TEST, header=0, delimiter="\t" ,quoting=3,encoding='utf-8')
+    test = pd.read_csv(configure.IMDB_FILE_TEST, header=0, delimiter="\t", quoting=3, encoding='utf-8')
 
 
     return test
@@ -35,7 +35,7 @@ testx=pool.map(imdb_bag_of_word_libs.processLine,testx)
 
 
 def saveTrain():
-    with codecs.open(configure.KAGLE_FILE_TEST_LINE_SENTANCE, 'w', encoding='utf-8') as fout:
+    with codecs.open(configure.IMDB_FILE_TEST_LINE_SENTANCE, 'w', encoding='utf-8') as fout:
         for lb,line in zip(ids, testx):
             fout.write(unicode(lb)+u' '+u' '.join(line).strip()+u'\n')
 

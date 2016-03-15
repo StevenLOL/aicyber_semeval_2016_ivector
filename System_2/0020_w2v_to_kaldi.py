@@ -107,8 +107,8 @@ def generate_w2v_for_ivector_extractor():
     outputPath='./data/ivector_extractor_train/'
     os.system('mkdir -p '+outputPath)
     w2vfeats=outputPath+'w2vFeatures.ark'
-    w2vmodel=models.Word2Vec.load(configure.KAGLE_W2V_MODEL)
-    rewrite_w2v_2_kaldi(configure.KAGLE_FILE_TRAIN_IVECTOR_LINE_SENTANCE,w2vfeats,w2vmodel,lineID_Prefix='w2v',haslabel=False)
+    w2vmodel=models.Word2Vec.load(configure.IMDB_W2V_MODEL)
+    rewrite_w2v_2_kaldi(configure.IMDB_FILE_TRAIN_IVECTOR_LINE_SENTANCE, w2vfeats, w2vmodel, lineID_Prefix='w2v', haslabel=False)
 
 
 
@@ -154,9 +154,9 @@ def generate_train_for_w2v_vectors():
     outputPath=configure.KALDI_DATA_IMDB_TRAIN
     os.system('mkdir -p '+outputPath)
     w2vfeats=outputPath+'w2vFeatures.ark'
-    linesentance=configure.KAGLE_FILE_TRAIN_W2V_LINE_SENTANCE
+    linesentance=configure.IMDB_FILE_TRAIN_W2V_LINE_SENTANCE
     #rewrite2wordlist(configure.TRAIN_SET,linesentance,haslabel=True,maxLine=500000)
-    w2vmodel=models.Word2Vec.load(configure.KAGLE_W2V_MODEL)
+    w2vmodel=models.Word2Vec.load(configure.IMDB_W2V_MODEL)
     rewrite_w2v_2_kaldi(linesentance,w2vfeats,w2vmodel,lineID_Prefix='train',haslabel=True)
 
 
@@ -165,7 +165,7 @@ def generate_semeval_for_w2v_vectors(linesentance,outputPath,lineID_Prefix='trai
     os.system('mkdir -p '+outputPath)
     w2vfeats=outputPath+'/w2vFeatures.ark'
     #linesentance=configure.SEMEVAL_FILE_LINE_SENTANCE
-    w2vmodel=models.Word2Vec.load(configure.KAGLE_W2V_MODEL)
+    w2vmodel=models.Word2Vec.load(configure.IMDB_W2V_MODEL)
     rewrite_w2v_2_kaldi(linesentance,w2vfeats,w2vmodel,lineID_Prefix=lineID_Prefix,haslabel=True)
 
 
@@ -207,7 +207,7 @@ def generate_kaggle_test_for_w2v_vectors(linesentance,outputPath,lineID_Prefix='
     os.system('mkdir -p '+outputPath)
     w2vfeats=outputPath+'/w2vFeatures.ark'
     #linesentance=configure.SEMEVAL_FILE_LINE_SENTANCE
-    w2vmodel=models.Word2Vec.load(configure.KAGLE_W2V_MODEL)
+    w2vmodel=models.Word2Vec.load(configure.IMDB_W2V_MODEL)
     rewrite_w2v_2_kaldi(linesentance,w2vfeats,w2vmodel,lineID_Prefix=lineID_Prefix,haslabel=True)
 
 
@@ -217,7 +217,7 @@ def Convert2KaldiData():
 
     generate_w2v_for_ivector_extractor()
     generate_train_for_w2v_vectors()
-    generate_kaggle_test_for_w2v_vectors(configure.KAGLE_FILE_TEST_LINE_SENTANCE,configure.KALDI_DATA_IMDB_TEST,'ktest')
+    generate_kaggle_test_for_w2v_vectors(configure.IMDB_FILE_TEST_LINE_SENTANCE, configure.KALDI_DATA_IMDB_TEST, 'ktest')
     generate_semeval_for_w2v_vectors(configure.SEMEVAL_TRAIN_FILE_LINE_SENTANCE,configure.KALDI_DATA_SEMEVAL_TRAIN,'semtrain')
     generate_semeval_for_w2v_vectors(configure.SEMEVAL_DEV_FILE_LINE_SENTANCE,configure.KALDI_DATA_SEMEVAL_DEV,'semdev')
     generate_semeval_for_w2v_vectors(configure.SEMEVAL_DEV_TEST_FILE_LINE_SENTANCE,configure.KALDI_DATA_SEMEVAL_DEVTEST,'semdevtest')

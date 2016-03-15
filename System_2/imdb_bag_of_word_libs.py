@@ -128,3 +128,23 @@ def kaldiID_2_LB(idlist):
             print id, 'Error'
         '''
     return rv
+
+
+def loadFeatsText(fname):
+    '''
+    load kaldi feats
+    :param fname: file name of a kaldi feat
+    :return:
+    two lists
+    ids, and values
+    '''
+    rvvalues=[]
+    fdata=open(fname).read()
+    fdata=fdata.replace('[\n','[').replace('[ \n','[')
+    fdata=fdata.split('\n')
+    fdata=[s.replace('[','').replace(']','').replace('  ',' ').replace('  ',' ').strip() for s in fdata if len(s)>10 and '_22 ' not in s ]
+    print fdata[0]
+    rvids=[s.split()[0] for s in fdata]
+    values=[map(float,s.split()[1:]) for s in fdata]
+    return rvids,values
+

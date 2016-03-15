@@ -41,12 +41,12 @@ import os
 os.system('mkdir -p tempfolder')
 def saveTrainUnlabed():
     unlabeled.extend(trainx)
-    with codecs.open(configure.KAGLE_FILE_ALL_LINE_SENTANCE,'w',encoding='utf-8') as fout:
+    with codecs.open(configure.IMDB_FILE_ALL_LINE_SENTANCE, 'w', encoding='utf-8') as fout:
         for line in unlabeled:
             fout.write(u' '.join(line).strip()+u'\n')
 
 def saveTrain():
-    with codecs.open(configure.KAGLE_FILE_TRAIN_W2V_LINE_SENTANCE, 'w', encoding='utf-8') as fout:
+    with codecs.open(configure.IMDB_FILE_TRAIN_W2V_LINE_SENTANCE, 'w', encoding='utf-8') as fout:
         for lb,line in zip(trainy, trainx):
             fout.write(unicode(lb)+u' '+u' '.join(line).strip()+u'\n')
 

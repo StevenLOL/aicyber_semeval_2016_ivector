@@ -19,7 +19,7 @@ Word-to-vector model is trained by using Gensim.
 
 ###2.2.1 Data used:
 Train (25000) and unlabeled(50000) of imdb, you should have all the data if you clone this repository.
-####0000
+####Convert data to list of tokens
 
 First convert imdb data to list of tokens for unsupervised learning of w2v.
 ```
@@ -32,13 +32,14 @@ These two files will convert the test and all SemEval data to list of tokens.
 0001_imdb_test_2_line_sentances.py
 0002_semeval2016_tweet_2_line_sentance.py
 ```
+The output files are saved in ./tempfolder
 
-####0010
+####Train word-2-vector
 
 ```
 python 0010_w2v_train.py
 ```
-This will train w2v based on data in 0000 , with following setup:
+This will train w2v based on data in previous session, with following setup:
 ```
     num_features = 20    # Word vector dimensionality
     min_word_count = 10 #25   # Minimum word count
@@ -47,7 +48,7 @@ This will train w2v based on data in 0000 , with following setup:
     downsampling = 1e-3
 ```
 
-Output model is ./tempfolder/trainAndUnalbed.w2v.20.bin
+Output model is ./tempfolder/imdb_trained_75000.w2v.20.bin
 
 ## 2.3 Convert text data to kaldi format
 We already have all the data in "list of tokens" format, so we can use word-to-vector to convert them into list of vectors.
@@ -58,9 +59,7 @@ python 0020_w2v_to_kaldi.py
 
 This process including converting training data, unlabeled and test data of imdb and train,dev,devtest and test set for SemEval2016.
 
-The covnerted data will be stored in **data** folder and follow Kaldi's specification,[More on Kaldi data format](https://github.com/StevenLOL/Research_speech_speaker_verification_nist_sre2010/blob/master/doc/help_kaldi.md)..
-
-This process will take time to completed.
+The covnerted data will be stored in **data** folder and follow Kaldi's specification,[more on Kaldi data format](https://github.com/StevenLOL/Research_speech_speaker_verification_nist_sre2010/blob/master/doc/help_kaldi.md)..
 
 In each folder there will be one w2vFeatures.ark and W2vFeatures.ark.mean
 
@@ -93,6 +92,7 @@ semeval_dev, semeval_devtest ,semeval_train contrains semeval data as their name
 
 ##3 Training of i-vector extractor and i-vector extraction
 Training and extraction are all done in following script:
+This process will take hours to completed, however if you have a "super" computer or a cluster, you can use more threads and processes to train the system.
 
 ```
 sh ./run.w2v.sh

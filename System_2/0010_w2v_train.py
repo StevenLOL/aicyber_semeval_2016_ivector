@@ -35,12 +35,12 @@ def trainW2V(sentences,model_name = "300features_40minwords_10context.bin"):
 
     model.save(model_name)
 
-datalist= LineSentence(configure.KAGLE_FILE_ALL_LINE_SENTANCE)  #loadGenSimTrainData('aicyber_wiki_weibo_words.txt')
+datalist= LineSentence(configure.IMDB_FILE_ALL_LINE_SENTANCE)  #loadGenSimTrainData('aicyber_wiki_weibo_words.txt')
 #print len(datalist)
 #print datalist[0]
 #print datalist[1]
 #print len(datalist)
-model_name = configure.KAGLE_W2V_MODEL
+model_name = configure.IMDB_W2V_MODEL
 trainW2V(datalist,model_name = model_name)
 
 #testmodel
