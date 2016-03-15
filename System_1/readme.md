@@ -5,7 +5,7 @@
 
 ##Preprocessing
 
-The text data is first being processed by tweet tokenizer, emoticons are preserved as tokens, some emoticons are replace by words , eg :) -> good , :( -> bad
+The text data is first being processed by tweet tokenizer, emoticons are preserved as tokens, some emoticons are replaced by words , eg :) -> good , :( -> bad
 
 ##Features
 
