@@ -15,9 +15,10 @@ Training of i-vector system is in a completely unsupervised manner, it includes 
 ## 2.1 Check [prerequistes](./prerequisites.md)
 
 ## 2.2 Train Gensim W2V model
+Word-to-vector model is trained by using Gensim.
+
 ###2.2.1 Data used:
-train unlabeled of imdb
-Training of a word to vector model by using Gensim.
+Train (25000) and unlabeled(50000) of imdb, you should have all the data if you clone this repository.
 ####0000
 
 First convert imdb data to list of tokens for unsupervised learning of w2v.
@@ -49,17 +50,13 @@ This will train w2v based on data in 0000 , with following setup:
 Output model is ./tempfolder/trainAndUnalbed.w2v.20.bin
 
 ## 2.3 Convert text data to kaldi format
-We already have all the data in list of tokens format, so we can use w2v to convert them into list of vectors.
-
+We already have all the data in "list of tokens" format, so we can use word-to-vector to convert them into list of vectors.
+## 2.3.1 Convert text data to kaldi features
 ~~~
 python 0020_w2v_to_kaldi.py
 ~~~
 
 This process including converting training data, unlabeled and test data of imdb and train,dev,devtest and test set for SemEval2016.
-
-
-##
-
 
 The covnerted data will be stored in **data** folder and follow Kaldi's specification,[More on Kaldi data format](https://github.com/StevenLOL/Research_speech_speaker_verification_nist_sre2010/blob/master/doc/help_kaldi.md)..
 
@@ -73,6 +70,11 @@ w2vFeatures.ark.mean is the mean w2v vector for each sentence.
 
 Both can be opened via text editor.
 
+### 2.3.2 Convert kaldi features to scp, utt2spk
+
+~~~
+./0030_refine_kaldi_datafile.sh
+~~~
 
 
 
