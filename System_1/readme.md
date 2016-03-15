@@ -3,6 +3,9 @@
 
 ##A vector space model approach.
 
+~~~
+python system_1_baseline.py
+~~~
 ##Preprocessing
 
 The text data is first being processed by tweet tokenizer, emoticons are preserved as tokens, some emoticons are replaced by words , eg :) -> good , :( -> bad
