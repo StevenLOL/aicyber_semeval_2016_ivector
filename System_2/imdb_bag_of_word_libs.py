@@ -110,7 +110,7 @@ def filterline(linein):
 
 def kaldiID_2_LB(idlist):
     '''
-    convert a well formated kaldi id in to its id and label
+    convert well formated kaldi ids into  lists of id  and label
     :param idlist: a list of kaldi id
     :return: a list of labels
     '''
