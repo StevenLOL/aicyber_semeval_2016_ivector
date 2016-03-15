@@ -11,8 +11,7 @@ This task is sentiment analysis in tweeets. It focused on classifying tweets int
 
 ###2) [system based on i-vector](./System_2)
 
-#[Prerequisites] (./System_2/prerequisites.md)
+##[Prerequisites] (./System_2/prerequisites.md)
 
-#Releated work:
 
 
