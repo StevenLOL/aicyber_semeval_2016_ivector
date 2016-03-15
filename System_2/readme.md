@@ -164,14 +164,14 @@ And output:
 #FAQ
 ## Is your imdb data the same as those published work?
 Yes, it is same, same training, testing, and unsupvised data.
-## What is the delta or double deta ?
-One can say it's this word vector - next word vector in general , details is in [DeltaFeatures] (http://kaldi.sourceforge.net/classkaldi_1_1DeltaFeatures.html)
-## What is the major task, befor i-vector training?
+## What is the delta ?
+One can say ' word vector - next word vector ' in general , details is in [DeltaFeatures] (http://kaldi.sourceforge.net/classkaldi_1_1DeltaFeatures.html)
+## What is the major task befor i-vector training?
 Convert those data into kaldi format...
 ## How long the i-vector training could completed?
-On my desktop with 16GB memory it will take 6 hours to completed training.
-## Can kaldi run on cluster
-Yes
+On my desktop with 16GB memory it will take 6 hours for training to completed . 
+If you have a cluster , you can make training done with less time. 
+
 ## How could I edit python file?
 
 Any text editor or [PyCharm](https://www.jetbrains.com/pycharm/)
