@@ -170,4 +170,9 @@ One can say it's this word vector - next word vector in general , details is in 
 Convert those data into kaldi format...
 ## How long the i-vector training could completed?
 On my desktop with 16GB memory it will take 6 hours to completed training.
+## Can kaldi run on cluster
+Yes
+## How could I edit python file?
+
+Any text editor or [PyCharm](https://www.jetbrains.com/pycharm/)
 
