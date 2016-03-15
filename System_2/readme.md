@@ -165,7 +165,7 @@ And output:
 ## Is your imdb data the same as those published work?
 Yes, it is same, same training, testing, and unsupvised data.
 ## What is the delta ?
-One can say ' word vector - next word vector ' in general , details is in [DeltaFeatures] (http://kaldi.sourceforge.net/classkaldi_1_1DeltaFeatures.html)
+One can say ' word vector - next word vector ' in general , details are in [DeltaFeatures] (http://kaldi.sourceforge.net/classkaldi_1_1DeltaFeatures.html)
 ## What is the major task befor i-vector training?
 Convert those data into kaldi format...
 ## How long the i-vector training could completed?
