@@ -81,3 +81,8 @@ train unlabeled of imdb
 all data which suit the supervised training
 
 
+#FAQ
+## Is your imdb data the same as those published work?
+Yes, it is same, same training, testing, and unsupvised data.
+## What is the delta of double deta ?
+One can say it's this word vector - next word vector in general , details is in [DeltaFeatures] (http://kaldi.sourceforge.net/classkaldi_1_1DeltaFeatures.html)
