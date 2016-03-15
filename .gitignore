@@ -1,7 +1,7 @@
 !readme*
 !README*
 downloads/
-exp/
+
 data/
 # Byte-compiled / optimized / DLL files
 *.hdf5
