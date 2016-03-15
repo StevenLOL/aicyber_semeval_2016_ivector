@@ -7,6 +7,7 @@ This study propose use i-vector to model sentances.
 
 Training of i-vector system is in a completely unsupervised manner, it includes training of word2vec and training of i-vector extractor. Evaluation is done on IMDB similar and SemEval 2016 Task4A.
 
+This framewrok is developed using [Gensim](https://github.com/piskvorky/gensim) and  [Kaldi](https://github.com/kaldi-asr/kaldi)
 
 # 2 Steps to build the system
 ## 2.1 Check [prerequistes](./prerequisites.md)
