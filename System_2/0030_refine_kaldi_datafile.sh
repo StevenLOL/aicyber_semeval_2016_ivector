@@ -7,6 +7,7 @@ do
     echo $x
     ./conver_feats.sh $x &
 done
-
-echo "change setting in the run.w2v.sh file and start to train iVector extracor"
+wait
+echo "Done!"
+echo "Now change setting in the run.w2v.sh file and start to train iVector extracor"
 

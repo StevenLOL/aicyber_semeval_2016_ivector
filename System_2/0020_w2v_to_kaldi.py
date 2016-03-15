@@ -151,7 +151,7 @@ def rewrite2wordlist(inputFileName,outputFileName,haslabel=True,maxLine=-1):
 
 
 def generate_train_for_w2v_vectors():
-    outputPath='./data/train_ivectors/'
+    outputPath=configure.KALDI_DATA_IMDB_TRAIN
     os.system('mkdir -p '+outputPath)
     w2vfeats=outputPath+'w2vFeatures.ark'
     linesentance=configure.KAGLE_FILE_TRAIN_W2V_LINE_SENTANCE
@@ -185,17 +185,17 @@ def Covert2KaldiData():
     t1.start()
 
     #generate_semeval_for_w2v_vectors(configure.SEMEVAL_TRAIN_FILE_LINE_SENTANCE,'./data/semeval_train','semtrain')
-    t2=multiprocessing.Process(target=generate_semeval_for_w2v_vectors,args=(configure.SEMEVAL_TRAIN_FILE_LINE_SENTANCE,'./data/semeval_train','semtrain'))
+    t2=multiprocessing.Process(target=generate_semeval_for_w2v_vectors,args=(configure.SEMEVAL_TRAIN_FILE_LINE_SENTANCE,configure.KALDI_DATA_SEMEVAL_TRAIN,'semtrain'))
     t2.daemon=False
     t2.start()
 
 
-    t3=multiprocessing.Process(target=generate_semeval_for_w2v_vectors,args=(configure.SEMEVAL_DEV_FILE_LINE_SENTANCE,'./data/semeval_dev','semdev'))
+    t3=multiprocessing.Process(target=generate_semeval_for_w2v_vectors,args=(configure.SEMEVAL_DEV_FILE_LINE_SENTANCE,configure.KALDI_DATA_SEMEVAL_DEV,'semdev'))
     t3.daemon=False
     t3.start()
 
 
-    t4=multiprocessing.Process(target=generate_semeval_for_w2v_vectors,args=(configure.SEMEVAL_DEV_TEST_FILE_LINE_SENTANCE,'./data/semeval_devtest','semdevtest'))
+    t4=multiprocessing.Process(target=generate_semeval_for_w2v_vectors,args=(configure.SEMEVAL_DEV_TEST_FILE_LINE_SENTANCE,configure.KALDI_DATA_SEMEVAL_DEVTEST,'semdevtest'))
     t4.daemon=False
     t4.start()
 
@@ -215,12 +215,12 @@ def generate_kaggle_test_for_w2v_vectors(linesentance,outputPath,lineID_Prefix='
 def Convert2KaldiData():
     #convert labeled train + unlabeled data for i
 
-    #generate_w2v_for_ivector_extractor()
-    #generate_train_for_w2v_vectors()
-    #generate_kaggle_test_for_w2v_vectors(configure.KAGLE_FILE_TEST_LINE_SENTANCE,'./data/kaggle_test','ktest')
-    generate_semeval_for_w2v_vectors(configure.SEMEVAL_TRAIN_FILE_LINE_SENTANCE,'./data/semeval_train','semtrain')
-    generate_semeval_for_w2v_vectors(configure.SEMEVAL_DEV_FILE_LINE_SENTANCE,'./data/semeval_dev','semdev')
-    generate_semeval_for_w2v_vectors(configure.SEMEVAL_DEV_TEST_FILE_LINE_SENTANCE,'./data/semeval_devtest','semdevtest')
+    generate_w2v_for_ivector_extractor()
+    generate_train_for_w2v_vectors()
+    generate_kaggle_test_for_w2v_vectors(configure.KAGLE_FILE_TEST_LINE_SENTANCE,configure.KALDI_DATA_IMDB_TEST,'ktest')
+    generate_semeval_for_w2v_vectors(configure.SEMEVAL_TRAIN_FILE_LINE_SENTANCE,configure.KALDI_DATA_SEMEVAL_TRAIN,'semtrain')
+    generate_semeval_for_w2v_vectors(configure.SEMEVAL_DEV_FILE_LINE_SENTANCE,configure.KALDI_DATA_SEMEVAL_DEV,'semdev')
+    generate_semeval_for_w2v_vectors(configure.SEMEVAL_DEV_TEST_FILE_LINE_SENTANCE,configure.KALDI_DATA_SEMEVAL_DEVTEST,'semdevtest')
 
 
 

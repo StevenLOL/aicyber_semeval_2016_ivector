@@ -70,20 +70,45 @@ w2vFeatures.ark.mean is the mean w2v vector for each sentence.
 
 Both can be opened via text editor.
 
-### 2.3.2 Convert kaldi features to scp, utt2spk
+### 2.3.2 Convert kaldi features to feats.ark,feats.scp and utt2spk
 
 ~~~
-./0030_refine_kaldi_datafile.sh
+sh ./0030_refine_kaldi_datafile.sh
 ~~~
 
+There will be three more files in each folder in ./data, namely feats.ark,feats.scp and utt2spk. These files are required by kaldi system.
+
+1. feats.ark is feature's raw data
+2. feats.scp is the descroption of feats.ark
+3. utt2spk stores the utterance to speaker relationship for a Speaker Verification system. In this task it is useless, however it could used to store sentence to speaker/topic relationship as well, so we will keep this file in the system.
 
 
-##Training of i-vector extractor
-###Data used:
-train unlabeled of imdb
-##Extract i-vectors
-###Data used:
-all data which suit the supervised training
+###Check point
+
+After 2.3.2 , there will be six folders in ./data
+
+./data/ivector_extractor_train contains training data for i-vector extractor training.
+
+semeval_dev, semeval_devtest ,semeval_train contrains semeval data as their name imply.
+
+##Training of i-vector extractor and i-vector extraction
+Training and extraction are all done in following script:
+
+~~~
+sh ./run.w2v.sh
+~~~
+
+Change switches if you want to run the script step by step:
+
+~~~
+preparedata=true;
+trainDGMM=true;
+trainiVectorExtractor=true;
+extractIvectorIMDB=true;
+extractIvectorSemeval=true;
+~~~
+
+The output will be in a folder named **exp**
 
 
 #FAQ

@@ -37,7 +37,8 @@ print type(trainx),type(trainx[0]),trainx[0]
 
 #save train and unlabed
 #save train to eval set
-
+import os
+os.system('mkdir -p tempfolder')
 def saveTrainUnlabed():
     unlabeled.extend(trainx)
     with codecs.open(configure.KAGLE_FILE_ALL_LINE_SENTANCE,'w',encoding='utf-8') as fout:
