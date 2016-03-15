@@ -105,3 +105,26 @@ def filterline(linein):
     #lineout=u' '.join(processdwords)
 
     return lineout.lower()
+
+
+
+def kaldiID_2_LB(idlist):
+    '''
+    convert a well formated kaldi id in to its id and label
+    :param idlist: a list of kaldi id
+    :return: a list of labels
+    '''
+    rv=[]
+    for id in idlist:
+
+        v=id.split('_')[1]
+        rv.append(v)
+        '''
+        if v in ['1','2','3']:
+            rv.append(0)
+        elif v=='5':
+            rv.append(1)
+        else:
+            print id, 'Error'
+        '''
+    return rv

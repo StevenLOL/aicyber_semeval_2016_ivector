@@ -28,12 +28,15 @@ The SemEval 2016 training dataset which contains 3887 tweets are selected to tra
 local testing.
 
 ##Results:
+```
+SVD DIM=400
+Twitter2016 0.4048
 
-###SVD DIM=400
-Twitter2015 0.4617  Twitter2016 0.4048
-###SVD DIM=600
-Twitter2015 0.4732  Twitter2016 0.4261
+VD DIM=600
+Twitter2016 0.4261
 
+```
+Please noted this result is slightly better than the system we submitted (0.4025) during evluation period, due to an upgrade in tokenizer.
 
 #FAQ:
 ##When you join the evaluation?

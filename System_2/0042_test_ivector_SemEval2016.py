@@ -34,14 +34,11 @@ evalx=robust_scaler.transform(evalx)
 clf= LinearDiscriminantAnalysis() #
 clf.fit(trainx,trainy)
 predictValue=clf.predict(evalx)
-print confusion_matrix(evaly,predictValue)
-print classification_report(evaly,predictValue)
 
 print semeval2016_libs.scoreSameOrder(predictValue,configure.SCORE_REF_DEV)
 
 evalx2=robust_scaler.transform(evalx2)
 predictValue=clf.predict(evalx2)
-print confusion_matrix(evaly2,predictValue)
-print classification_report(evaly2,predictValue)
+
 
 print semeval2016_libs.scoreSameOrder(predictValue,configure.SCORE_REF_DEVTEST)

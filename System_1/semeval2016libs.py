@@ -165,7 +165,9 @@ def load_semeval_text_only(fname,delimiter=u'\t'):
 
     print 'totoal',len(rvdata) ,'@',fname
     print ids[0],y[0],x[0]
+
     x=map(filterlineEmoji,x)
+    #x=map(filterline,x)
     x=map(unicode.lower,x)
     return ids,y,x
 

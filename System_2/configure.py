@@ -43,20 +43,5 @@ def loadFeatsText(fname):
     values=[map(float,s.split()[1:]) for s in fdata]
     return rvids,values
 
-def kaldiID_2_LB(idlist):
-    rv=[]
-    for id in idlist:
-
-        v=id.split('_')[1]
-        rv.append(v)
-        '''
-        if v in ['1','2','3']:
-            rv.append(0)
-        elif v=='5':
-            rv.append(1)
-        else:
-            print id, 'Error'
-        '''
-    return rv
 
 

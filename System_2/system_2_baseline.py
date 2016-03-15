@@ -1,8 +1,7 @@
 from sklearn.decomposition import TruncatedSVD
-from sklearn.ensemble import BaggingClassifier
-from sklearn.feature_extraction import DictVectorizer
+
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import SGDClassifier, LogisticRegression
+
 from sklearn.metrics import confusion_matrix, classification_report
 import numpy as np
 import imdb_bag_of_word_libs
@@ -29,8 +28,7 @@ testx=[s[1:-1] for s in testx]
 print type(trainx),trainx[0]
 trainx=np.array(trainx)
 testx=np.array(testx)
-#trainx=[review_to_wordlist(s) for s in trainx]
-#print type(trainx),trainx[0]
+
 
 skf =KFold(len(trainy),n_folds=4,random_state=2016) #StratifiedKFold(trainy, n_folds=4)
 
@@ -87,19 +85,10 @@ for t in testid:
 print 'testid[0]',testid[0]
 predictValue=processTraining(trainx,trainy,testx,prob=False)
 print confusion_matrix(trueid,predictValue)
-print classification_report(trueid,predictValue)
+print classification_report(trueid,predictValue,digits=4)
 from sklearn.metrics import accuracy_score
 print accuracy_score(trueid,predictValue)
 
-#d = pd.DataFrame({'id': test['id'].values, 'sentiment': predictValue[:,0]})
-#d = pd.DataFrame({'id': test['id'].values, 'sentiment': predictValue[:]})
-#d.to_csv('bow_ug_bg_g5_bag_sgd_0.88_tfidf_lr.csv', index=False,quoting=1)
-
-
-
-
-#u+b 0.87
-#u+b+t 0.83
 
 
 
@@ -115,10 +104,10 @@ print accuracy_score(trueid,predictValue)
  [ 1310 11190]]
              precision    recall  f1-score   support
 
-          0       0.89      0.87      0.88     12500
-          1       0.88      0.90      0.89     12500
+          0     0.8928    0.8725    0.8825     12500
+          1     0.8753    0.8952    0.8851     12500
 
-avg / total       0.88      0.88      0.88     25000
+avg / total     0.8840    0.8838    0.8838     25000
 
 0.88384
 '''

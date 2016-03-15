@@ -29,7 +29,7 @@ print tfv.get_feature_names()
 print trainx.shape,evalx.shape
 
 
-tsvd=TruncatedSVD(n_components=600,random_state=2016)   # this gives similar results as to Semeval , try n_components=600
+tsvd=TruncatedSVD(n_components=400,random_state=2016)   # this gives similar results as to Semeval , try n_components=600
 trainx=tsvd.fit_transform(trainx)
 evalx=tsvd.transform(evalx)
 

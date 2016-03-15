@@ -22,39 +22,39 @@ Train (25000) and unlabeled(50000) of imdb, you should have all the data if you 
 ####0000
 
 First convert imdb data to list of tokens for unsupervised learning of w2v.
-~~~
+```
 python 0000_imdb_data_2_line_sentances.py
-~~~
+```
 This will produce the merged labeled train+unlabled training data, which should contain 75000 movie reviews.
 
 These two files will convert the test and all SemEval data to list of tokens.
-~~~
+```
 0001_imdb_test_2_line_sentances.py
 0002_semeval2016_tweet_2_line_sentance.py
-~~~
+```
 
 ####0010
 
-~~~
+```
 python 0010_w2v_train.py
-~~~
+```
 This will train w2v based on data in 0000 , with following setup:
-~~~
+```
     num_features = 20    # Word vector dimensionality
     min_word_count = 10 #25   # Minimum word count
     num_workers = 8       # Number of threads to run in parallel
     context = 7          # Context window size
     downsampling = 1e-3
-~~~
+```
 
 Output model is ./tempfolder/trainAndUnalbed.w2v.20.bin
 
 ## 2.3 Convert text data to kaldi format
 We already have all the data in "list of tokens" format, so we can use word-to-vector to convert them into list of vectors.
 ## 2.3.1 Convert text data to kaldi features
-~~~
+```
 python 0020_w2v_to_kaldi.py
-~~~
+```
 
 This process including converting training data, unlabeled and test data of imdb and train,dev,devtest and test set for SemEval2016.
 
@@ -72,9 +72,9 @@ Both can be opened via text editor.
 
 ### 2.3.2 Convert kaldi features to feats.ark,feats.scp and utt2spk
 
-~~~
+```
 sh ./0030_refine_kaldi_datafile.sh
-~~~
+```
 
 There will be three more files in each folder in ./data, namely feats.ark,feats.scp and utt2spk. These files are required by kaldi system.
 
@@ -91,26 +91,76 @@ After 2.3.2 , there will be six folders in ./data
 
 semeval_dev, semeval_devtest ,semeval_train contrains semeval data as their name imply.
 
-##Training of i-vector extractor and i-vector extraction
+##3 Training of i-vector extractor and i-vector extraction
 Training and extraction are all done in following script:
 
-~~~
+```
 sh ./run.w2v.sh
-~~~
+```
 
 Change switches if you want to run the script step by step:
 
-~~~
+```
 preparedata=true;
 trainDGMM=true;
 trainiVectorExtractor=true;
 extractIvectorIMDB=true;
 extractIvectorSemeval=true;
-~~~
+```
 
-The output will be in a folder named **exp**
+The output will be in a folder named **exp** .
 
 
+
+##4 Evaluation
+There are pre-trained i-vectors that you can play with, they are in file exp.zip under ./exp
+Unzip the folders into ./exp
+
+##4.1 Vector Space model baseline for IMDB
+
+```
+python system_2_baseline.py
+```
+
+And output will be:
+```
+             precision    recall  f1-score   support
+
+          0     0.8928    0.8725    0.8825     12500
+          1     0.8753    0.8952    0.8851     12500
+
+avg / total     0.8840    0.8838    0.8838     25000
+```
+
+##4.2 i-vector for IMDB
+
+```
+python 0041_test_ivector_imdb.py
+```
+And output will be:
+```
+             precision    recall  f1-score   support
+
+          0     0.8689    0.8838    0.8763     12500
+          1     0.8817    0.8666    0.8741     12500
+
+avg / total     0.8753    0.8752    0.8752     25000
+```
+##4.3 i-vector for SemEval2016
+
+```
+python 0042_test_ivector_SemEval2016.py
+```
+And output:
+```
+'../semeval2016/100_topics_100_tweets.sentence-three-point.subtask-A.dev.gold.txt.full
+
+37.32
+
+../semeval2016/100_topics_100_tweets.sentence-three-point.subtask-A.devtest.gold.txt.full
+38.14
+
+```
 #FAQ
 ## Is your imdb data the same as those published work?
 Yes, it is same, same training, testing, and unsupvised data.
