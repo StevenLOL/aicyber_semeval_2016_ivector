@@ -95,14 +95,15 @@ Training and extraction are all done in following script:
 This process will take hours to completed, however if you have a "super" computer or a cluster, you can use more threads and processes to train the system.
 
 ```
-sh ./run.w2v.sh
-```
+sh ./run.w2v.sh   
 
+```
+We are still polishing code here, if you want to retrain the i-vector system drop us an email: steven@aicyber.com
+Meanwhile pre-trained i-vectos are given, so you can reproduce the scores we listed in the paper , see 4 Evaluation.
 Change switches if you want to run the script step by step:
 
 ```
 preparedata=true;
-trainDGMM=true;
 trainiVectorExtractor=true;
 extractIvectorIMDB=true;
 extractIvectorSemeval=true;
