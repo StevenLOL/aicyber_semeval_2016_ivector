@@ -4,7 +4,7 @@ This repository contains the aicyber's system for [SemEval 2016](http://alt.qcri
 
 ##SemEval 2016 Task 4A
 
-This task is sentiment analysis in tweeets. It focused on classifying tweets into 4 classes: positive,negative or neutral sentiment.
+This task is sentiment analysis in tweeets. It focused on classifying tweets into 3 classes: positive,negative or neutral sentiment.
 
 ##Two systems are included:
 
