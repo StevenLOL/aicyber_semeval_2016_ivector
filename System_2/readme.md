@@ -3,11 +3,11 @@
 i-vectors often seen in Speaker verification domain. It projects variable length speech utterances into a fixed-size low-
 dimensional vector, namely i-vector. (More info on i-vector can be found in [Front-End Factor Analysis for Speaker Verification](https://www.researchgate.net/profile/Pierre_Dumouchel/publication/224166071_Front-End_Factor_Analysis_for_Speaker_Verification/links/0deec5176777115c24000000.pdf) )
 
-This study propose use i-vector to model sentances for NLP.
+This study propose use i-vector to model sentences for NLP.
 
 
 
-This framewrok is developed using [Gensim](https://github.com/piskvorky/gensim) and  [Kaldi](https://github.com/kaldi-asr/kaldi)
+This framework is developed using [Gensim](https://github.com/piskvorky/gensim) and  [Kaldi](https://github.com/kaldi-asr/kaldi)
 
 Training of i-vector system is in a completely unsupervised manner, it includes training of word2vec and training of i-vector extractor. Evaluation is done on IMDB similar and SemEval 2016 Task4A.
 
@@ -59,7 +59,7 @@ python 0020_w2v_to_kaldi.py
 
 This process including converting training data, unlabeled and test data of imdb and train,dev,devtest and test set for SemEval2016.
 
-The covnerted data will be stored in **data** folder and follow Kaldi's specification,[more on Kaldi data format](https://github.com/StevenLOL/Research_speech_speaker_verification_nist_sre2010/blob/master/doc/help_kaldi.md)..
+The converted data will be stored in **data** folder and follow Kaldi's specification,[more on Kaldi data format](https://github.com/StevenLOL/Research_speech_speaker_verification_nist_sre2010/blob/master/doc/help_kaldi.md)..
 
 In each folder there will be one w2vFeatures.ark and W2vFeatures.ark.mean
 
@@ -78,7 +78,7 @@ sh ./0030_refine_kaldi_datafile.sh
 There will be three more files in each folder in ./data, namely feats.ark,feats.scp and utt2spk. These files are required by kaldi system.
 
 1. feats.ark is feature's raw data
-2. feats.scp is the descroption of feats.ark
+2. feats.scp is the description of feats.ark
 3. utt2spk stores the utterance to speaker relationship for a Speaker Verification system. In this task it is useless, however it could used to store sentence to speaker/topic relationship as well, so we will keep this file in the system.
 
 
@@ -99,7 +99,7 @@ sh ./run.w2v.sh
 
 ```
 We are still polishing code here, if you want to retrain the i-vector system drop us an email: steven@aicyber.com
-Meanwhile pre-trained i-vectos are given, so you can reproduce the scores we listed in the paper , see 4 Evaluation.
+Meanwhile per-trained i-vectors are given, so you can reproduce the scores we listed in the paper , see 4 Evaluation.
 Change switches if you want to run the script step by step:
 
 ```
@@ -114,7 +114,7 @@ The output will be in a folder named **exp** .
 
 
 ##4 Evaluation
-There are pre-trained i-vectors that you can play with, they are in file exp.zip under ./exp
+There are per-trained i-vectors that you can play with, they are in file exp.zip under ./exp
 Unzip the folders into ./exp
 
 ##4.1 Vector Space model baseline for IMDB
@@ -164,7 +164,7 @@ And output:
 ```
 #FAQ
 ## Is your imdb data the same as those published work?
-Yes, it is same, same training, testing, and unsupvised data.
+Yes, it is same, same training, testing, and unsupervised data.
 ## What is the delta ?
 One can say ' word vector - next word vector ' in general , details are in [DeltaFeatures] (http://kaldi.sourceforge.net/classkaldi_1_1DeltaFeatures.html)
 ## What is the major task befor i-vector training?
@@ -176,4 +176,3 @@ If you have a cluster , you can make training done with less time.
 ## How could I edit python file?
 
 Any text editor or [PyCharm](https://www.jetbrains.com/pycharm/)
-
