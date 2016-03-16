@@ -99,7 +99,7 @@ sh ./run.w2v.sh
 
 ```
 We are still polishing code here, if you want to retrain the i-vector system drop us an email: steven@aicyber.com
-Meanwhile per-trained i-vectors are given, so you can reproduce the scores we listed in the paper , see 4 Evaluation.
+Meanwhile pre-trained i-vectors are given, so you can reproduce the scores we listed in the paper , see 4 Evaluation.
 Change switches if you want to run the script step by step:
 
 ```
