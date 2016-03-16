@@ -104,9 +104,9 @@ def rewrite_w2v_2_kaldi(inputFileName,outputFileName,w2vmodel,lineID_Prefix=u'',
 
 
 def generate_w2v_for_ivector_extractor():
-    outputPath='./data/ivector_extractor_train/'
+    outputPath='./data/ivector_extractor_train'
     os.system('mkdir -p '+outputPath)
-    w2vfeats=outputPath+'w2vFeatures.ark'
+    w2vfeats=outputPath+'/w2vFeatures.ark'
     w2vmodel=models.Word2Vec.load(configure.IMDB_W2V_MODEL)
     rewrite_w2v_2_kaldi(configure.IMDB_FILE_TRAIN_IVECTOR_LINE_SENTANCE, w2vfeats, w2vmodel, lineID_Prefix='w2v', haslabel=False)
 
@@ -153,7 +153,7 @@ def rewrite2wordlist(inputFileName,outputFileName,haslabel=True,maxLine=-1):
 def generate_train_for_w2v_vectors():
     outputPath=configure.KALDI_DATA_IMDB_TRAIN
     os.system('mkdir -p '+outputPath)
-    w2vfeats=outputPath+'w2vFeatures.ark'
+    w2vfeats=outputPath+'/w2vFeatures.ark'
     linesentance=configure.IMDB_FILE_TRAIN_W2V_LINE_SENTANCE
     #rewrite2wordlist(configure.TRAIN_SET,linesentance,haslabel=True,maxLine=500000)
     w2vmodel=models.Word2Vec.load(configure.IMDB_W2V_MODEL)
