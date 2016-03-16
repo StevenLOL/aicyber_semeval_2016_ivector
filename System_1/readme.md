@@ -36,7 +36,7 @@ VD DIM=600
 Twitter2016 0.4261
 
 ```
-Please noted this result is slightly better than the system we submitted (0.4025) during evluation period, due to an upgrade in tokenizer.
+Please noted this result is slightly better than the system we submitted (0.4025) during evaluation period, due to an upgrade in tokenizer.
 
 #[System 2 an i-vector based system](../System_2)
 
