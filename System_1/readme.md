@@ -32,7 +32,7 @@ local testing.
 SVD DIM=400
 Twitter2016 0.4048
 
-VD DIM=600
+SVD DIM=600
 Twitter2016 0.4261
 
 ```
