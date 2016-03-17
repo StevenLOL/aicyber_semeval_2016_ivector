@@ -114,7 +114,7 @@ The output will be in a folder named **exp** .
 
 
 ##4 Evaluation
-There are per-trained i-vectors that you can play with, they are in file exp.zip under ./exp
+There are pre-trained i-vectors that you can play with, they are in file exp.zip under ./exp
 Unzip the folders into ./exp
 
 ##4.1 Vector Space model baseline for IMDB
