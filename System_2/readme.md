@@ -9,7 +9,7 @@ This study propose use i-vector to model sentences for NLP.
 
 This framework is developed using [Gensim](https://github.com/piskvorky/gensim) and  [Kaldi](https://github.com/kaldi-asr/kaldi)
 
-Training of i-vector system is in a completely unsupervised manner, it includes training of word2vec and training of i-vector extractor. Evaluation is done on IMDB similar and SemEval 2016 Task4A.
+Training of i-vector system is in a completely unsupervised manner, it includes training of word2vec and training of i-vector extractor. Evaluation is done on IMDB and SemEval 2016 Task4A.
 
 # 2 Steps to build the system
 ## 2.1 Check [prerequistes](./prerequisites.md)
@@ -100,14 +100,6 @@ sh ./run.w2v.sh
 ```
 We are still polishing code here, if you want to retrain the i-vector system drop us an email: steven@aicyber.com
 Meanwhile pre-trained i-vectors are given, so you can reproduce the scores we listed in the paper , see 4 Evaluation.
-Change switches if you want to run the script step by step:
-
-```
-preparedata=true;
-trainiVectorExtractor=true;
-extractIvectorIMDB=true;
-extractIvectorSemeval=true;
-```
 
 The output will be in a folder named **exp** .
 
