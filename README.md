@@ -16,3 +16,16 @@ This task is sentiment analysis in tweeets. It focused on classifying tweets int
 
 
 
+
+
+```
+@InProceedings{SemEval:2016:task4,
+  author    = {Steven Du and Zhang Xi},
+  title     = {Aicyber at {SemEval}-2016 Task 4: i-vector based sentence representation},  booktitle = {Proceedings of the 10th International Workshop on Semantic Evaluation},
+  series    = {SemEval '16},
+  month     = {June},
+  year      = {2016},
+  address   = {San Diego, California},
+  publisher = {Association for Computational Linguistics},
+}
+```
