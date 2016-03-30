@@ -15,7 +15,10 @@ This task is sentiment analysis in tweeets. It focused on classifying tweets int
 ##[Prerequisites] (./System_2/prerequisites.md)
 
 
+Kindly cite this paper if you use the code:
 
+Steven Du and Xi Zhang. 2016. Aicyber at SemEval-2016 Task 4:  i-vector based sentence representation.
+In Proceedings of the 10th International Workshop on Semantic Evaluation (SemEval 2016), San Diego, US
 
 
 ```
