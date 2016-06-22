@@ -161,6 +161,9 @@ Yes, it is same, same training, testing, and unsupervised data.
 One can say ' word vector - next word vector ' in general , details are in [DeltaFeatures] (http://kaldi.sourceforge.net/classkaldi_1_1DeltaFeatures.html)
 ## What is the major task befor i-vector training?
 Convert those data into kaldi format...
+
+Please noticed that in this system we follow Kaldi data format and write all data to the feats.ark (whose size is of GBs), there is [Kaldi-NLP](https://github.com/StevenLOL/kaldi-nlp) developed so user would use words and a lookup table as features. Which resulting a smaller file size of feats.ark.
+
 ## How long the i-vector training could completed?
 On my desktop with 16GB memory it will take 6 hours for training to completed . 
 If you have a cluster , you can make training done with less time. 
@@ -168,3 +171,4 @@ If you have a cluster , you can make training done with less time.
 ## How could I edit python file?
 
 Any text editor or [PyCharm](https://www.jetbrains.com/pycharm/)
+
