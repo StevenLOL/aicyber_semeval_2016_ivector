@@ -98,7 +98,7 @@ This process will take hours to completed, however if you have a "super" compute
 sh ./run.w2v.sh   
 
 ```
-We are still polishing code here, if you want to retrain the i-vector system drop us an email: steven@aicyber.com
+We are still polishing code here, if you want to retrain the i-vector system and found any problems please drop us an email: steven@aicyber.com.
 Meanwhile pre-trained i-vectors are given, so you can reproduce the scores we listed in the paper , see 4 Evaluation.
 
 The output will be in a folder named **exp** .
@@ -162,7 +162,7 @@ One can say ' word vector - next word vector ' in general , details are in [Delt
 ## What is the major task befor i-vector training?
 Convert those data into kaldi format...
 
-Please noticed that in this system we follow Kaldi data format and write all data to the feats.ark (whose size is of GBs), there is [Kaldi-NLP](https://github.com/StevenLOL/kaldi-nlp) developed so user would use words and a lookup table as features. Which resulting a smaller file size of feats.ark.
+**Please noticed that in this system we follow Kaldi data format and write all data to the feats.ark (whose size is of GBs), there is [Kaldi-NLP](https://github.com/StevenLOL/kaldi-nlp) developed so user would use words and a lookup table as features. Which resulting a smaller file size of feats.ark.**
 
 ## How long the i-vector training could completed?
 On my desktop with 16GB memory it will take 6 hours for training to completed . 
